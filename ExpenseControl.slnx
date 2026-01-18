@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ExpenseControl.Api/ExpenseControl.Api.csproj" Id="f7820eb0-c5a6-48ce-8702-30ef45b8f5a3" />
+    <Project Path="src/ExpenseControl.Application/ExpenseControl.Application.csproj" />
+    <Project Path="src/ExpenseControl.Domain/ExpenseControl.Domain.csproj" />
+    <Project Path="src/ExpenseControl.Infrastructure/ExpenseControl.Infrastructure.csproj" />
+    <Project Path="src/ExpenseControl.Tests/ExpenseControl.Tests.csproj" />
+  </Folder>
+</Solution>
