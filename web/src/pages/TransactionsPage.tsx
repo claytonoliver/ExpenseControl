@@ -133,7 +133,10 @@ export function TransactionsPage() {
   const compatibleCategories = getCompatibleCategories(formData.type);
   const editCompatibleCategories = getCompatibleCategories(editFormData.type);
   const isDataLoading = loadingPersons || loadingCategories;
-  const canCreateTransactions = persons.length > 0 && compatibleCategories.length > 0;
+  // Permite criar transações se houver pelo menos uma pessoa e
+  // pelo menos uma categoria cadastrada (não exigimos que haja
+  // categorias compatíveis no momento do tipo selecionado).
+  const canCreateTransactions = persons.length > 0 && categories.length > 0;
 
   const columns: Column<TransactionDto>[] = [
     {

@@ -31,7 +31,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
         }
         catch (ArgumentException ex)
         {
-            return Result<CategoryDto>.Failure(ex.Message);
+            return Result.Failure<CategoryDto>(ex.Message);
         }
 
         await _categoryRepository.SaveChangesAsync(cancellationToken);

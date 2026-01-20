@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExpenseControl.Infrastructure.Context;
 
-[name]
 public class ExpenseControlContext : DbContext
 {
     public DbSet<Person> Persons { get; set; }
