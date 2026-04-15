@@ -1,11 +1,12 @@
 <Solution>
   <Folder Name="/Backend/" />
-  <Folder Name="/Backend/Src/">
-    <Project Path="Backend/src/ExpenseControl.Api/ExpenseControl.Api.csproj" />
-    <Project Path="Backend/src/ExpenseControl.Application/ExpenseControl.Application.csproj" />
-    <Project Path="Backend/src/ExpenseControl.Domain/ExpenseControl.Domain.csproj" />
-    <Project Path="Backend/src/ExpenseControl.Infrastructure/ExpenseControl.Infrastructure.csproj" />
-    <Project Path="Backend/src/ExpenseControl.Tests/ExpenseControl.Tests.csproj" />
+  <Folder Name="/Backend/Core/">
+    <Project Path="Backend/Core/ExpenseControl.Api/ExpenseControl.Api.csproj" />
+    <Project Path="Backend/Core/ExpenseControl.Application/ExpenseControl.Application.csproj" />
+    <Project Path="Backend/Core/ExpenseControl.Domain/ExpenseControl.Domain.csproj" />
+    <Project Path="Backend/Core/ExpenseControl.Infrastructure/ExpenseControl.Infrastructure.csproj" />
+    <Project Path="Backend/Core/ExpenseControl.Tests/ExpenseControl.Tests.csproj" />
+    <Project Path="Backend/Core/ExpenseControl.IOC/ExpenseControl.IOC.csproj" Id="3df3a7d4-bdfd-4656-a035-880638e10b21" />
   </Folder>
   <Folder Name="/Web/" />
 </Solution>
