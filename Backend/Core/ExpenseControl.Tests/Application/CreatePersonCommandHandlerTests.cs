@@ -1,6 +1,6 @@
 using ExpenseControl.Application.Commands.Persons;
-using ExpenseControl.Application.Interfaces;
 using ExpenseControl.Domain.Entities;
+using ExpenseControl.Domain.Interfaces;
 using FluentAssertions;
 using Moq;
 

@@ -1,5 +1,4 @@
 using ExpenseControl.Application.Commands.Categories;
-using ExpenseControl.Domain.Enums;
 using FluentValidation;
 
 namespace ExpenseControl.Application.Validators;

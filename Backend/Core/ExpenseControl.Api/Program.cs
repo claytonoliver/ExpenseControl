@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using ExpenseControl.Api.Middlewares;
-using ExpenseControl.Application;
-using ExpenseControl.Infrastructure;
+using ExpenseControl.IOC.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,8 +23,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Registra os serviços das camadas Application e Infrastructure
-builder.Services.AddApplication();
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddServiceCollectionExtensions(builder.Configuration);
 
 // Configura CORS para permitir requisições do frontend React
 builder.Services.AddCors(options =>

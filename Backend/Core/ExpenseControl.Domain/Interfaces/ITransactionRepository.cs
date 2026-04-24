@@ -1,6 +1,6 @@
 using ExpenseControl.Domain.Entities;
 
-namespace ExpenseControl.Application.Interfaces;
+namespace ExpenseControl.Domain.Interfaces;
 
 /// <summary>
 /// Interface do repositório de transações.

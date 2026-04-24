@@ -1,7 +1,7 @@
 using ExpenseControl.Application.Commands.Transactions;
-using ExpenseControl.Application.Interfaces;
 using ExpenseControl.Domain.Entities;
 using ExpenseControl.Domain.Enums;
+using ExpenseControl.Domain.Interfaces;
 using FluentAssertions;
 using Moq;
 

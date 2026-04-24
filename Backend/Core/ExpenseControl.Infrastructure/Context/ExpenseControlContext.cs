@@ -11,7 +11,7 @@ public class ExpenseControlContext : DbContext
 
     public ExpenseControlContext(DbContextOptions<ExpenseControlContext> options) : base(options)
     {
-        
+
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,5 +1,5 @@
-using ExpenseControl.Application.Interfaces;
 using ExpenseControl.Domain.Entities;
+using ExpenseControl.Domain.Interfaces;
 using ExpenseControl.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,7 +1,7 @@
 using ExpenseControl.Application.Common;
 using ExpenseControl.Application.DTOs;
-using ExpenseControl.Application.Interfaces;
 using ExpenseControl.Domain.Enums;
+using ExpenseControl.Domain.Interfaces;
 using MediatR;
 
 namespace ExpenseControl.Application.Commands.Categories;
@@ -23,7 +23,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
         var category = await _categoryRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (category is null)
-            return Result.Failure<CategoryDto> ("Categoria não encontrada.");
+            return Result.Failure<CategoryDto>("Categoria não encontrada.");
 
         try
         {

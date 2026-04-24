@@ -1,6 +1,6 @@
 using ExpenseControl.Application.DTOs;
-using ExpenseControl.Application.Interfaces;
 using ExpenseControl.Domain.Enums;
+using ExpenseControl.Domain.Interfaces;
 using MediatR;
 
 namespace ExpenseControl.Application.Queries.Persons;
