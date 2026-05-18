@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.57.0" />
+    <PackageReference Include="Google.Protobuf"        Version="3.26.0" />
+    <PackageReference Include="Grpc.Tools"             Version="2.57.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\Shared\ExpenseControl.Shared\Grpc\*.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

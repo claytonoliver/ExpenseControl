@@ -1,0 +1,60 @@
+﻿syntax = "proto3";
+option csharp_namespace = "ExpenseControl.Shared.Grpc";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service PersonGrpcService {
+    rpc GetAll    (google.protobuf.Empty) returns (GetPersonsResponse);
+    rpc GetTotals (google.protobuf.Empty) returns (GetPersonTotalsResponse);
+    rpc Create    (CreatePersonRequest)   returns (PersonResponse);
+    rpc Update    (UpdatePersonRequest)   returns (PersonResponse);
+    rpc Delete    (DeletePersonRequest)   returns (DeletePersonResponse);
+}
+
+message CreatePersonRequest {
+    string Name = 1;
+    int32  Age  = 2;
+}
+
+message UpdatePersonRequest {
+    string Id   = 1;
+    string Name = 2;
+    int32  Age  = 3;
+}
+
+message DeletePersonRequest {
+    string Id = 1;
+}
+
+message PersonResponse {
+    string                    Id        = 1;
+    string                    Name      = 2;
+    int32                     Age       = 3;
+    google.protobuf.Timestamp CreatedAt = 4;
+    google.protobuf.Timestamp UpdatedAt = 5;
+}
+
+message GetPersonsResponse {
+    repeated PersonResponse Persons = 1;
+}
+
+message PersonTotalResponse {
+    string PersonId      = 1;
+    string PersonName    = 2;
+    string TotalIncome   = 3;
+    string TotalExpense  = 4;
+    string Balance       = 5;
+}
+
+message GetPersonTotalsResponse {
+    repeated PersonTotalResponse PersonTotals      = 1;
+    string                       GrandTotalIncome  = 2;
+    string                       GrandTotalExpense = 3;
+    string                       GrandTotalBalance = 4;
+}
+
+message DeletePersonResponse {
+    bool   Success = 1;
+    string Message = 2;
+}

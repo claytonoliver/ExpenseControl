@@ -1,0 +1,44 @@
+syntax = "proto3";
+option csharp_namespace = "ExpenseControl.Shared.Grpc";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service CategoryGrpcService {
+    rpc GetAll (google.protobuf.Empty)  returns (GetCategoriesResponse);
+    rpc Create (CreateCategoryRequest) returns (CategoryResponse);
+    rpc Update (UpdateCategoryRequest) returns (CategoryResponse);
+    rpc Delete (DeleteCategoryRequest) returns (DeleteCategoryResponse);
+}
+
+message CreateCategoryRequest {
+    string Description = 1;
+    int32  Purpose     = 2;
+}
+
+message UpdateCategoryRequest {
+    string Id          = 1;
+    string Description = 2;
+    int32  Purpose     = 3;
+}
+
+message DeleteCategoryRequest {
+    string Id = 1;
+}
+
+message CategoryResponse {
+    string                    Id                 = 1;
+    string                    Description        = 2;
+    int32                     Purpose            = 3;
+    string                    PurposeDescription = 4;
+    google.protobuf.Timestamp CreatedAt          = 5;
+}
+
+message GetCategoriesResponse {
+    repeated CategoryResponse Categories = 1;
+}
+
+message DeleteCategoryResponse {
+    bool   Success = 1;
+    string Message = 2;
+}

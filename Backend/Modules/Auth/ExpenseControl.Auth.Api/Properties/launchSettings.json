@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ExpenseControl.Auth.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63017;http://localhost:7100"
+    }
+  }
+}
