@@ -1,0 +1,54 @@
+syntax = "proto3";
+option csharp_namespace = "ExpenseControl.Shared.Grpc";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service TransactionGrpcService {
+    rpc GetAll (google.protobuf.Empty)      returns (GetTransactionsResponse);
+    rpc Create (CreateTransactionRequest)  returns (TransactionResponse);
+    rpc Update (UpdateTransactionRequest)  returns (TransactionResponse);
+    rpc Delete (DeleteTransactionRequest)  returns (DeleteTransactionResponse);
+}
+
+message CreateTransactionRequest {
+    string Description = 1;
+    string Value       = 2;
+    int32  Type        = 3;
+    string CategoryId  = 4;
+    string PersonId    = 5;
+}
+
+message UpdateTransactionRequest {
+    string Id          = 1;
+    string Description = 2;
+    string Value       = 3;
+    int32  Type        = 4;
+    string CategoryId  = 5;
+}
+
+message DeleteTransactionRequest {
+    string Id = 1;
+}
+
+message TransactionResponse {
+    string                    Id                  = 1;
+    string                    Description         = 2;
+    string                    Value               = 3;
+    int32                     Type                = 4;
+    string                    TypeDescription     = 5;
+    string                    CategoryId          = 6;
+    string                    CategoryDescription = 7;
+    string                    PersonId            = 8;
+    string                    PersonName          = 9;
+    google.protobuf.Timestamp CreatedAt           = 10;
+}
+
+message GetTransactionsResponse {
+    repeated TransactionResponse Transactions = 1;
+}
+
+message DeleteTransactionResponse {
+    bool   Success = 1;
+    string Message = 2;
+}

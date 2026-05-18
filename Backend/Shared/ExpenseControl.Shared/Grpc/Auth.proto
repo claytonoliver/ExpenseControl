@@ -1,0 +1,48 @@
+syntax = "proto3";
+option csharp_namespace = "ExpenseControl.Shared.Grpc";
+
+import "google/protobuf/timestamp.proto";
+
+service AuthGrpcService {
+    rpc Register        (RegisterRequest)         returns (AuthTokenResponse);
+    rpc Login           (LoginRequest)            returns (AuthTokenResponse);
+    rpc Invite          (InviteRequest)           returns (InviteResponse);
+    rpc AcceptInvitation(AcceptInvitationRequest) returns (AuthTokenResponse);
+}
+
+message RegisterRequest {
+    string Name     = 1;
+    string Email    = 2;
+    string Password = 3;
+}
+
+message LoginRequest {
+    string Email    = 1;
+    string Password = 2;
+}
+
+message InviteRequest {
+    string AccountId       = 1;
+    string InvitedEmail    = 2;
+    string RequestingUserId = 3;
+}
+
+message AcceptInvitationRequest {
+    string Token  = 1;
+    string UserId = 2;
+}
+
+message AuthTokenResponse {
+    string                    Token     = 1;
+    string                    UserId    = 2;
+    string                    AccountId = 3;
+    google.protobuf.Timestamp ExpiresAt = 4;
+}
+
+message InviteResponse {
+    string                    Id           = 1;
+    string                    AccountId    = 2;
+    string                    InvitedEmail = 3;
+    google.protobuf.Timestamp ExpiresAt    = 4;
+    string                    Status       = 5;
+}

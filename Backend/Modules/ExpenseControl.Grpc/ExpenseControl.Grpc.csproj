@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\..\Shared\ExpenseControl.Shared\Grpc\*.proto" GrpcServices="Server" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Shared\ExpenseControl.Shared\ExpenseControl.Shared.csproj" />
+		<ProjectReference Include="..\ExpenseControl.Application\ExpenseControl.Application.csproj" />
+		<ProjectReference Include="..\ExpenseControl.IOC\ExpenseControl.IOC.csproj" />
+	</ItemGroup>
+
+</Project>
